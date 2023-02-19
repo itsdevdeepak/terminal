@@ -1,9 +1,11 @@
 import React from "react";
+import Layout from "./components/Layout";
+import Terminal from "./components/Terminal";
 const App = () => {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <Layout>
+      <Terminal />
+    </Layout>
   );
 };
 
