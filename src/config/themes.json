@@ -1,0 +1,17 @@
+{
+  "catppuccin-mocha": {
+    "foreground": "#CDD6F4",
+    "background": "#1E1E2E",
+    "selectionForeground": "#1E1E2E",
+    "selectionBackground": "#F5E0DC",
+    "cursorColor": "#F5E0DC",
+    "black": "#45475A",
+    "red": "#F38BA8",
+    "green": "#A6E3A1",
+    "yellow": "#F9E2AF",
+    "blue": "#89B4FA",
+    "megenta": "#F5C2E7",
+    "cyan": "#94E2D5",
+    "white": "#BAC2DE"
+  }
+}

@@ -34,9 +34,11 @@ const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
   body {
     font-family: 'JetBrains Mono', monospace;
+    background-color: ${(props: { theme: Theme }) => props.theme.background};
+    color:${(props: { theme: Theme }) => props.theme.foreground};
+    height: 100vh;
+    overflow: hidden;
   }
-
-
 `;
 
 export default GlobalStyle;
