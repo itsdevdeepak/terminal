@@ -1,6 +1,6 @@
 import React from "react";
 
-const Echo = (msg: string) => {
-  return <p>help {msg}</p>;
+const Echo = (args: string[]) => {
+  return <span>echo {args.join(" ")}</span>;
 };
 export default Echo;

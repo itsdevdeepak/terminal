@@ -21,10 +21,11 @@ const Input = styled.input`
   color: inherit;
   border: none;
   outline: none;
+  padding-left: 0.6rem;
 `;
 
 const Prompt = ({ inputRef, historyHook }: PromptProps) => {
-  const [history] = historyHook;
+  const [history, setHistory] = historyHook;
   useEffect(() => {
     inputRef.current?.scrollIntoView({ behavior: "auto", block: "end" });
   }, [history, inputRef]);
@@ -36,6 +37,7 @@ const Prompt = ({ inputRef, historyHook }: PromptProps) => {
         const formData = new FormData(e.target as HTMLFormElement);
         const command = formData.get("prompt")?.toString() ?? " ";
         inputRef.current.value = "";
+        if (command === "clear") return setHistory([]);
         runCommand(command, historyHook);
       }}
     >
