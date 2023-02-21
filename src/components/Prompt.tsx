@@ -1,4 +1,4 @@
-import React, { Dispatch, RefObject, SetStateAction } from "react";
+import React, { Dispatch, RefObject, SetStateAction, useEffect } from "react";
 import styled from "styled-components";
 import PS1 from "./PS1";
 
@@ -14,7 +14,6 @@ type HistoryHook = [string[], Dispatch<SetStateAction<string[]>>];
 type PromptProps = {
   inputRef: RefObject<HTMLInputElement>;
   historyHook: HistoryHook;
-  screenRef: RefObject<HTMLDivElement>;
 };
 
 const Input = styled.input`
@@ -25,6 +24,10 @@ const Input = styled.input`
 `;
 
 const Prompt = ({ inputRef, historyHook }: PromptProps) => {
+  const [history] = historyHook;
+  useEffect(() => {
+    inputRef.current?.scrollIntoView({ behavior: "auto", block: "end" });
+  }, [history, inputRef]);
   return (
     <form
       onSubmit={(e) => {
@@ -33,8 +36,6 @@ const Prompt = ({ inputRef, historyHook }: PromptProps) => {
         const formData = new FormData(e.target as HTMLFormElement);
         const command = formData.get("prompt")?.toString() ?? " ";
         inputRef.current.value = "";
-        // TODO: Chhange Scroll Options
-        inputRef.current.scrollIntoView();
         runCommand(command, historyHook);
       }}
     >

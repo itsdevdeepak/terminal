@@ -4,7 +4,13 @@ import Screen from "./Screen";
 import styled from "styled-components";
 
 const TerminalContainer = styled.div`
-  height: 100vh;
+  height: calc(100vh - 0.7rem * 2);
+  margin: 0.7rem;
+  padding: 1.15rem 1rem;
+  border: 2px solid ${({ theme }: { theme: Theme }) => theme.red};
+  border-radius: 4px;
+  display: block;
+  overflow-y: auto;
 `;
 
 const setFocus = (ref: RefObject<HTMLInputElement>): void => {
@@ -13,19 +19,14 @@ const setFocus = (ref: RefObject<HTMLInputElement>): void => {
 
 const Terminal = () => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const screenRef = useRef<HTMLDivElement>(null);
   const [history, setHistory] = useState<string[]>([]);
 
   useEffect(() => setFocus(inputRef), []);
 
   return (
     <TerminalContainer onClick={() => setFocus(inputRef)}>
-      <Screen screenRef={screenRef} historyHook={[history, setHistory]} />
-      <Prompt
-        inputRef={inputRef}
-        screenRef={screenRef}
-        historyHook={[history, setHistory]}
-      />
+      <Screen historyHook={[history, setHistory]} />
+      <Prompt inputRef={inputRef} historyHook={[history, setHistory]} />
     </TerminalContainer>
   );
 };

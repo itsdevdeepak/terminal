@@ -1,18 +1,12 @@
-import React, { Dispatch, RefObject, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import PS1 from "./PS1";
 
 type HistoryHook = [string[], Dispatch<SetStateAction<string[]>>];
 
-const Screen = ({
-  historyHook,
-  screenRef,
-}: {
-  historyHook: HistoryHook;
-  screenRef: RefObject<HTMLDivElement>;
-}) => {
+const Screen = ({ historyHook }: { historyHook: HistoryHook }) => {
   const history = historyHook[0];
   return (
-    <div ref={screenRef}>
+    <div>
       {history.map((item, idx) => (
         <div key={idx}>
           <PS1 />

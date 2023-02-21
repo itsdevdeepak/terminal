@@ -39,6 +39,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     overflow: hidden;
   }
+
+  p,a {
+    font-weight: 500;
+  }
 `;
 
 export default GlobalStyle;
