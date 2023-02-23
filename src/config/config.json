@@ -2,5 +2,6 @@
   "user": "user",
   "host": "host",
   "about": "some about",
-  "theme": "catppuccin-mocha"
+  "theme": "catppuccin-mocha",
+  "projectRepo": "https://github.com/itsdevdeepak/terminal"
 }

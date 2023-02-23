@@ -20,7 +20,8 @@ const art = `
 
 const BannerArt = () => <AsciiArt>{art}</AsciiArt>;
 const Banner = (args: string[]) => {
-  if (args.join()) console.log(args);
+  if (args.length > 0)
+    return <p>banner: {args.join(" ")} is not valid command</p>;
 
   return (
     <div>

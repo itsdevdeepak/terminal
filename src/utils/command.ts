@@ -1,11 +1,11 @@
 import commands from "../components/commands";
 
-export const getAllCommands = () => {
-  return Object.keys(commands);
+export const getAllCommands = (): CommandName[] => {
+  return Object.keys(commands) as CommandName[];
 };
 
 export const isValidCommand = (command: string): command is CommandName => {
-  return getAllCommands().includes(command);
+  return command in commands;
 };
 
 export const getCommandOutput = (command: CommandName, args: string[]) => {

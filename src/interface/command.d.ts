@@ -1,4 +1,12 @@
-type CommandName = "help" | "echo" | "banner" | "repo";
+type CommandName =
+  | "help"
+  | "echo"
+  | "banner"
+  | "repo"
+  | "projects"
+  | "clear"
+  | "about"
+  | "whoami";
 
 type Command = {
   name: CommandName;

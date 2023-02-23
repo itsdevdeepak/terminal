@@ -2,6 +2,7 @@ import help from "./Help";
 import echo from "./Echo";
 import banner from "./Banner";
 import repo from "./Repo";
+import projects from "./Projects";
 
 const commands: Commands = {
   help: {
@@ -23,6 +24,11 @@ const commands: Commands = {
     name: "repo",
     description: "open project reposotry in new tab",
     component: repo,
+  },
+  projects: {
+    name: "projects",
+    description: "display projects",
+    component: projects,
   },
 };
 export default commands;

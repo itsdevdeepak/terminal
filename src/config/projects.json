@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "name": "Terminal Portfolio",
+      "description": "terminal portfolio.",
+      "repo": "https://github.com/itsdevdeepak/terminal",
+      "link": "",
+      "tech": ["reactjs", "typescript", "styled-components"]
+    },
+    {
+      "name": "Password Manager",
+      "description": "Parssword manager",
+      "repo": "https://github.com/itsdevdeepak/password-manager",
+      "tech": ["expressjs", "typescript", "prisma", "posgresql", "cli"]
+    },
+    {
+      "name": "Werecat Game",
+      "description": "Werecat is an Online Multiplayer Game built with ReactJs and Socket.io. Online implementation of One Night Werewolf Board Game.",
+      "repo": "https://github.com/DepzXD/werecat-online",
+      "tech": [
+        "javascript",
+        "socket.io",
+        "expressjs",
+        "reactjs",
+        "styled-components"
+      ]
+    },
+    {
+      "name": "Portfolio V1",
+      "description": "Personal Portfolio V1",
+      "repo": "https://github.com/DepzXD/Portfolio",
+      "link": "https://depzxd.github.io/Portfolio",
+      "tech": ["javascript", "gatsby", "styled-components"]
+    }
+  ]
+}
