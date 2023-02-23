@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: itsdevdeepak/itsdevdeepak.github.io
-          path: "itsdevdeepak.github.io"
+          path: itsdevdeepak.github.io
           ref: main
           token: ${{ secrets.REPO_TOKEN }}
 
@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Copy build files
-        run: cp -R dist/* itsdevdeepak.github.io/
+        run: cp -R dist/* /itsdevdeepak.github.io/
 
       - name: Commit and push changes
         run: |
