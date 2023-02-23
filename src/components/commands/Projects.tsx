@@ -4,7 +4,7 @@ import { getProject } from "../../utils/project";
 
 const ProjectStyles = styled.div`
   .title {
-    color: ${({ theme }: { theme: Theme }) => theme.blue};
+    color: ${({ theme }: { theme: Theme }) => theme.cyan};
     font-weight: bold;
   }
   .sperater {
@@ -16,17 +16,17 @@ const ProjectStyles = styled.div`
   }
 
   .value {
-    flex: 7;
+    flex: 5;
   }
 
   .col {
     flex: 1;
-    color: ${({ theme }: { theme: Theme }) => theme.megenta};
   }
 
   a {
     font-style: normal;
     color: inherit;
+    color: ${({ theme }: { theme: Theme }) => theme.blue};
   }
 `;
 
@@ -34,7 +34,7 @@ const Project = (project: Project, key: number) => {
   return (
     <ProjectStyles key={key}>
       <p className="title">{project.name}</p>
-      <p className="sperater">---</p>
+      {/* <p className="sperater">---</p> */}
       <div className="columns">
         <span className="col">description:</span>
         <span className="value">{project.description}</span>

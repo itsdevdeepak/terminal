@@ -1,40 +1,40 @@
-import help from "./Help";
-import echo from "./Echo";
-import banner from "./Banner";
-import repo from "./Repo";
-import projects from "./Projects";
-import about from "./About";
+import Help from "./Help";
+import Echo from "./Echo";
+import Banner from "./Banner";
+import Repo from "./Repo";
+import Projects from "./Projects";
+import About from "./About";
 
 const commands: Commands = {
   help: {
     name: "help",
     description: "displey list of available commands.",
-    component: help,
+    component: Help,
   },
   echo: {
     name: "echo",
     description: "prints string after the command",
-    component: echo,
+    component: Echo,
   },
   banner: {
     name: "banner",
     description: "display banner",
-    component: banner,
+    component: Banner,
   },
   repo: {
     name: "repo",
     description: "open project reposotry in new tab",
-    component: repo,
+    component: Repo,
   },
   projects: {
     name: "projects",
     description: "display projects",
-    component: projects,
+    component: Projects,
   },
   about: {
     name: "about",
     description: "display about",
-    component: about,
+    component: About,
   },
 };
 export default commands;

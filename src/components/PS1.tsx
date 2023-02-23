@@ -1,27 +1,24 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
+import { getConfig } from "../utils/config";
 
 const PS1Container = styled.p`
   display: inline-block;
 `;
 
-type PS1Props = {
-  user?: string;
-  host?: string;
-};
-
 const ColorText = styled.span`
   color: ${({ color }) => color};
 `;
 
-const PS1 = ({ user = "user", host = "host" }: PS1Props) => {
+const PS1 = () => {
+  const { user, host } = getConfig();
   const theme = useTheme() as Theme;
 
   return (
     <PS1Container>
       <ColorText color={theme.red}>{user}</ColorText>
       <ColorText color={theme.white}>@</ColorText>
-      <ColorText color={theme.green}>{host}</ColorText>
+      <ColorText color={theme.cyan}>{host}</ColorText>
       <span>$ ~</span>
     </PS1Container>
   );

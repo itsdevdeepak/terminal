@@ -1,7 +1,6 @@
 {
-  "user": "user",
-  "host": "host",
-  "about": "some about",
+  "user": "guest",
+  "host": "itsdevdeepak.github.io",
   "theme": "catppuccin-mocha",
   "projectRepo": "https://github.com/itsdevdeepak/terminal"
 }

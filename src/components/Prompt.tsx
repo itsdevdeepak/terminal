@@ -1,5 +1,6 @@
 import React, { Dispatch, RefObject, SetStateAction, useEffect } from "react";
 import styled from "styled-components";
+import { getAllCommands } from "../utils/command";
 import PS1 from "./PS1";
 
 type HistoryHook = [string[], Dispatch<SetStateAction<string[]>>];
@@ -15,6 +16,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   padding-left: 0.6rem;
+  caret-color: ${({ theme }: { theme: Theme }) => theme.cursorColor};
 `;
 
 const runCommand = (command: string, historyHook: HistoryHook): void => {
@@ -27,7 +29,6 @@ const runCommand = (command: string, historyHook: HistoryHook): void => {
 
 const Prompt = ({ inputRef, historyHook }: PromptProps) => {
   const history = historyHook[0];
-
   useEffect(() => {
     inputRef.current?.scrollIntoView({ block: "end" });
   }, [history, inputRef]);
@@ -46,8 +47,20 @@ const Prompt = ({ inputRef, historyHook }: PromptProps) => {
       runCommand("clear", historyHook);
       event.preventDefault();
     }
+    if (event.key === "Tab") {
+      event.preventDefault();
+      if (!inputRef.current?.value) return;
+      const q = inputRef.current?.value;
+      const commands = getAllCommands();
+      commands.forEach((command: CommandName) => {
+        if (command.match(`^${q}`)) {
+          if (!inputRef.current) return;
+          inputRef.current.value = command;
+          return;
+        }
+      });
+    }
   };
-
   return (
     <form onSubmit={(e) => handleFormSubmit(e)}>
       <label htmlFor="prompt">

@@ -5,8 +5,7 @@ import commands from "../commands";
 
 const ColumnText = styled.div`
   .lable {
-    color: ${(props: { theme: Theme }) => props.theme.green};
-    font-weight: bold;
+    color: ${(props: { theme: Theme }) => props.theme.cyan};
     flex: 1;
   }
 
@@ -15,7 +14,7 @@ const ColumnText = styled.div`
   }
 
   .value {
-    flex: 8;
+    flex: 10;
   }
 `;
 
@@ -23,8 +22,8 @@ const Command = (command: Command) => {
   return (
     <ColumnText>
       <div className="row">
-        <p className="lable">{command.name}:</p>
-        <p className="value">{command.description}</p>
+        <p className="lable">{command.name}</p>
+        <p className="value">- {command.description}</p>
       </div>
     </ColumnText>
   );
@@ -35,10 +34,19 @@ const Help = (args: string[]) => {
     return <span>help: {args.join(" ")}: is not help command</span>;
   return (
     <div>
-      <p>list of available commands</p>
       {getAllCommands().map((commandName: CommandName) => {
         return Command(commands[commandName]);
       })}
+      <ColumnText>
+        <div className="row">
+          <p className="lable">Ctrl+l</p>
+          <p className="value">- Clear Screen</p>
+        </div>
+        <div className="row">
+          <p className="lable">Tab</p>
+          <p className="value">- Autocomplete Command</p>
+        </div>
+      </ColumnText>
     </div>
   );
 };

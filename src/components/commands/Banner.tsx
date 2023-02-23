@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const AsciiArt = styled.pre`
   font-family: "MS PGothic", sans-serif;
-  /* color: ${({ theme }: { theme: Theme }) => theme.cyan}; */
-  font-weight: bold;
+  color: ${({ theme }: { theme: Theme }) => theme.white};
+  font-weight: bolder;
 `;
 
 /* eslint-disable no-irregular-whitespace */
