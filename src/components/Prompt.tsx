@@ -36,8 +36,8 @@ const Prompt = ({ inputRef, historyHook }: PromptProps) => {
         if (!inputRef.current) return;
         const formData = new FormData(e.target as HTMLFormElement);
         const command = formData.get("prompt")?.toString() ?? " ";
-        if (command === "clear") return setHistory([]);
         inputRef.current.value = "";
+        if (command === "clear") return setHistory([]);
         runCommand(command, historyHook);
       }}
     >
