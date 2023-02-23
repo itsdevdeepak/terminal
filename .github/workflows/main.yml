@@ -11,7 +11,10 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
-
+        
+      - name: install dependency 
+        run: npm i
+        
       - name: Build
         run: npm run build
 
