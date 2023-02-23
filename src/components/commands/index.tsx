@@ -3,6 +3,7 @@ import echo from "./Echo";
 import banner from "./Banner";
 import repo from "./Repo";
 import projects from "./Projects";
+import about from "./About";
 
 const commands: Commands = {
   help: {
@@ -29,6 +30,11 @@ const commands: Commands = {
     name: "projects",
     description: "display projects",
     component: projects,
+  },
+  about: {
+    name: "about",
+    description: "display about",
+    component: about,
   },
 };
 export default commands;

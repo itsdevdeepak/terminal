@@ -22,6 +22,7 @@ const PS1 = ({ user = "user", host = "host" }: PS1Props) => {
       <ColorText color={theme.red}>{user}</ColorText>
       <ColorText color={theme.white}>@</ColorText>
       <ColorText color={theme.green}>{host}</ColorText>
+      <span>$ ~</span>
     </PS1Container>
   );
 };
