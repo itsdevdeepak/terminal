@@ -2,13 +2,6 @@ import React, { Dispatch, RefObject, SetStateAction, useEffect } from "react";
 import styled from "styled-components";
 import PS1 from "./PS1";
 
-const runCommand = (command: string, historyHook: HistoryHook): void => {
-  const [history, setHistory] = historyHook;
-  const tempHistory = [...history];
-  tempHistory.push(command);
-  setHistory(tempHistory);
-};
-
 type HistoryHook = [string[], Dispatch<SetStateAction<string[]>>];
 
 type PromptProps = {
@@ -24,6 +17,13 @@ const Input = styled.input`
   padding-left: 0.6rem;
 `;
 
+const runCommand = (command: string, historyHook: HistoryHook): void => {
+  const [history, setHistory] = historyHook;
+  const tempHistory = [...history];
+  tempHistory.push(command);
+  setHistory(tempHistory);
+};
+
 const Prompt = ({ inputRef, historyHook }: PromptProps) => {
   const [history, setHistory] = historyHook;
   useEffect(() => {
@@ -36,8 +36,8 @@ const Prompt = ({ inputRef, historyHook }: PromptProps) => {
         if (!inputRef.current) return;
         const formData = new FormData(e.target as HTMLFormElement);
         const command = formData.get("prompt")?.toString() ?? " ";
-        inputRef.current.value = "";
         if (command === "clear") return setHistory([]);
+        inputRef.current.value = "";
         runCommand(command, historyHook);
       }}
     >

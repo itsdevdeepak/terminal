@@ -15,7 +15,10 @@ const commandOutput = (inputCommand: string) => {
 };
 
 const OutputStyles = styled.div`
-  & > * {
+  p {
+    display: inline;
+  }
+  .command > * {
     padding-right: 0.6rem;
   }
 `;
@@ -26,7 +29,10 @@ const Screen = ({ historyHook }: { historyHook: HistoryHook }) => {
     <div>
       {history.map((item, idx) => (
         <OutputStyles key={idx}>
-          <PS1 />
+          <div className="command">
+            <PS1 />
+            <p>{item}</p>
+          </div>
           {commandOutput(item)}
         </OutputStyles>
       ))}

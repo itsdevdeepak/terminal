@@ -20,7 +20,7 @@ const setFocus = (ref: RefObject<HTMLInputElement>): void => {
 const Terminal = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [history, setHistory] = useState<string[]>([]);
-
+  useEffect(() => setHistory(["banner"]), []);
   useEffect(() => setFocus(inputRef), []);
 
   return (
