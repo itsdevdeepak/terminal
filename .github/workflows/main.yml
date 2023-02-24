@@ -16,6 +16,11 @@ jobs:
           path: itsdevdeepak.github.io
           ref: main
           token: ${{ secrets.REPO_TOKEN }}
+      
+      - name: list clone
+        run: ls -lash
+      - name: print dir
+        run: pwd
 
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -25,8 +30,11 @@ jobs:
         
       - name: Build
         run: npm run build
+        
       - name: list
         run: ls -lash
+      - name: print dir
+        run: pwd
         
       - name: Copy build files
         run: cp -R dist/* itsdevdeepak.github.io
