@@ -9,21 +9,19 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+        
       - name: Clone repo
         uses: actions/checkout@v3
         with:
           repository: itsdevdeepak/itsdevdeepak.github.io
-          path: itsdevdeepak.github.io
+          path: itsdevdeepak
           ref: main
           token: ${{ secrets.REPO_TOKEN }}
       
       - name: list clone
         run: ls -lash
-      - name: print dir
-        run: pwd
-
-      - name: Checkout source code
-        uses: actions/checkout@v3
         
       - name: install dependency 
         run: npm i
@@ -32,12 +30,13 @@ jobs:
         run: npm run build
         
       - name: list
-        run: ls -lash
+        run: ls itsdevdeepak/ 
+        
       - name: print dir
         run: pwd
         
       - name: Copy build files
-        run: cp -R dist/* itsdevdeepak.github.io
+        run: cp -r dist/* itsdevdeepak/
 
       - name: Commit and push changes
         run: |
