@@ -9,38 +9,29 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code
+      - name: checkout source code
         uses: actions/checkout@v3
         
-      - name: Clone repo
+      - name: clone target repository 
         uses: actions/checkout@v3
         with:
           repository: itsdevdeepak/itsdevdeepak.github.io
           path: itsdevdeepak
           ref: main
           token: ${{ secrets.REPO_TOKEN }}
-      
-      - name: list clone
-        run: ls -lash
         
       - name: install dependency 
         run: npm i
         
-      - name: Build
+      - name: build
         run: npm run build
         
-      - name: list
-        run: ls itsdevdeepak/ 
-        
-      - name: print dir
-        run: pwd
-        
-      - name: Copy build files
+      - name: Copy build files to target repository
         run: cp -r dist/* itsdevdeepak/
 
-      - name: Commit and push changes
+      - name: Commit and push changes to target repository
         run: |
-          cd target-repo
+          cd itsdevdeepak
           git config user.email "deepak.k13@outlook.com"
           git config user.name "Deepak"
           git add .
