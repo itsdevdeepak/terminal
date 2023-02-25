@@ -34,13 +34,12 @@ const Project = (project: Project, key: number) => {
   return (
     <ProjectStyles key={key}>
       <p className="title">{project.name}</p>
-      {/* <p className="sperater">---</p> */}
       <div className="columns">
-        <span className="col">description:</span>
+        <span className="col">Description:</span>
         <span className="value">{project.description}</span>
       </div>
       <div className="columns">
-        <span className="col">Project Reposotry:</span>
+        <span className="col">Project Repository:</span>
         <a
           href={project.repo}
           target="_blank"
@@ -65,7 +64,7 @@ const Project = (project: Project, key: number) => {
       )}
       {project.tech.length > 0 && (
         <div className="columns">
-          <span className="col">Technologys:</span>
+          <span className="col">Technologies:</span>
           <span className="value">{project.tech.join(", ")}</span>
         </div>
       )}

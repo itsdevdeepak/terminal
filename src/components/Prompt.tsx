@@ -1,6 +1,7 @@
 import React, { Dispatch, RefObject, SetStateAction, useEffect } from "react";
 import styled from "styled-components";
 import { getAllCommands } from "../utils/command";
+import { getConfig } from "../utils/config";
 import PS1 from "./PS1";
 
 type HistoryHook = [string[], Dispatch<SetStateAction<string[]>>];
@@ -22,6 +23,7 @@ const Input = styled.input`
 const runCommand = (command: string, historyHook: HistoryHook): void => {
   const [history, setHistory] = historyHook;
   if (command === "clear") return setHistory([]);
+  if (command === "repo") window.open(getConfig().projectRepo);
   const tempHistory = [...history];
   tempHistory.push(command);
   setHistory(tempHistory);

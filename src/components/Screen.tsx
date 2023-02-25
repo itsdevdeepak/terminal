@@ -11,6 +11,7 @@ const commandOutput = (inputCommand: string) => {
 
   if (!isValidCommand(command))
     return <span>{command}: command not found</span>;
+
   return getCommandOutput(command, args);
 };
 

@@ -16,6 +16,10 @@ const ColumnText = styled.div`
   .value {
     flex: 10;
   }
+
+  .hotkey {
+    color: ${(props: { theme: Theme }) => props.theme.cyan};
+  }
 `;
 
 const Command = (command: Command) => {
@@ -37,13 +41,15 @@ const Help = (args: string[]) => {
       {getAllCommands().map((commandName: CommandName) => {
         return Command(commands[commandName]);
       })}
+      <br />
+      <p>Hotkeys and other helpful features</p>
       <ColumnText>
         <div className="row">
-          <p className="lable">Ctrl+l</p>
+          <p className="lable hotkey">Ctrl+l</p>
           <p className="value">- Clear Screen</p>
         </div>
         <div className="row">
-          <p className="lable">Tab</p>
+          <p className="lable hotkey">Tab</p>
           <p className="value">- Autocomplete Command</p>
         </div>
       </ColumnText>
