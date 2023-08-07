@@ -1,0 +1,9 @@
+{
+  "user": "guest",
+  "host": "itsdevdeepak.github.io",
+  "theme": {
+    "light": "catppuccin-mocha",
+    "dark": "catppuccin-mocha"
+  },
+  "projectRepo": "https://github.com/itsdevdeepak/terminal"
+}

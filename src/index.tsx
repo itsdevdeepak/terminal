@@ -7,4 +7,8 @@ if (!appContainer) throw new Error("app-container not found in html file");
 
 const root = createRoot(appContainer);
 
-root.render(<App />);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

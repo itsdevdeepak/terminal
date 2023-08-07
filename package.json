@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/itsdevdeepak/terminal/issues"
   },
-  "homepage": "https://github.com/itsdevdeepak/terminal#readme",
+  "homepage": "https://itsdevdeepak.github.io",
   "devDependencies": {
     "@types/eslint": "^8.21.1",
     "@types/react": "^18.0.28",
@@ -39,6 +39,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
