@@ -1,0 +1,39 @@
+name: build and push the build files to anothe repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@v3
+
+      - name: clone target repository
+        uses: actions/checkout@v3
+        with:
+          repository: itsdevdeepak/itsdevdeepak.github.io
+          path: itsdevdeepak
+          ref: main
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: install dependency
+        run: npm i
+
+      - name: build
+        run: npm run build
+
+      - name: Copy build files to target repository
+        run: cp -r dist/* itsdevdeepak/
+
+      - name: Commit and push changes to target repository
+        run: |
+          cd itsdevdeepak
+          git config user.email "deepak.k13@outlook.com"
+          git config user.name "Deepak"
+          git add .
+          git commit -m "Add build files"
+          git push origin main
