@@ -20,7 +20,8 @@
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "extraFileExtensions": [".json"]
   },
   "plugins": [
     "react",

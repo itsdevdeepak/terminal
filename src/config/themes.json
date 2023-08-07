@@ -1,17 +1,40 @@
 {
-  "catppuccin-mocha": {
-    "foreground": "#CDD6F4",
-    "background": "#1E1E2E",
-    "selectionForeground": "#1E1E2E",
-    "selectionBackground": "#F5E0DC",
-    "cursorColor": "#F5E0DC",
-    "black": "#45475A",
-    "red": "#F38BA8",
-    "green": "#A6E3A1",
-    "yellow": "#F9E2AF",
-    "blue": "#89B4FA",
-    "megenta": "#F5C2E7",
-    "cyan": "#94E2D5",
-    "white": "#BAC2DE"
+  "data": {
+    "catppuccin-mocha": {
+      "id": "1",
+      "name": "Catppuccin Mocha",
+      "foreground": "#CDD6F4",
+      "background": "#1E1E2E",
+      "selectionForeground": "#1E1E2E",
+      "selectionBackground": "#F5E0DC",
+      "borderColor": "#F38BA8",
+      "cursorColor": "#F5E0DC",
+      "black": "#45475A",
+      "red": "#F38BA8",
+      "green": "#A6E3A1",
+      "yellow": "#F9E2AF",
+      "blue": "#89B4FA",
+      "magenta": "#F5C2E7",
+      "cyan": "#94E2D5",
+      "white": "#BAC2DE"
+    },
+    "catppuccin-latte": {
+      "id": "2",
+      "name": "Catppuccin Latte",
+      "foreground": "#4C4F69",
+      "background": "#EFF1F5",
+      "selectionForeground": "#EFF1F5",
+      "selectionBackground": "#DC8A78",
+      "borderColor": "#7287FD",
+      "cursorColor": "#DC8A78",
+      "black": "#5C5F77",
+      "red": "#D20F39",
+      "green": "#40A02B",
+      "yellow": "#DF8E1D",
+      "blue": "#1E66F5",
+      "magenta": "#EA76CB",
+      "cyan": "#179299",
+      "white": "#ACB0BE"
+    }
   }
 }

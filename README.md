@@ -1,7 +1,6 @@
 # Terminal
 
-Custom Terminal styled Portfolie website
-
+Custom Terminal styled Portfolio website
 
 
 ## Run Locally
