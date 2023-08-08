@@ -9,7 +9,7 @@ const Theme = (args: string[], helper: Helper) => {
   const themes = getFromStorage("all-themes") as Themes;
   const { setTheme } = helper.theme;
 
-  if (args.length < 1 && args.length > 2) {
+  if (args.length !== 1) {
     return <p>theme: {args}: is not theme option</p>;
   }
 

@@ -75,4 +75,4 @@ const Prompt = forwardRef<HTMLInputElement, unknown>((_props, ref) => {
 
 Prompt.displayName = "Prompt";
 
-export default Prompt;
+export default React.memo(Prompt);
